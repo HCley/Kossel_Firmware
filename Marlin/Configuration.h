@@ -77,7 +77,7 @@
 #define STRING_CONFIG_H_AUTHOR "(DaHai, Auto Bed Level)" // Who made the changes. DaHai: Change if you wish - informational only
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 "1.1.9" // will be shown during bootup in line 1
-#define STRING_SPLASH_LINE2 "Cley  printer"         // will be shown during bootup in line 2. DaHai - Change if you wish - informational only
+#define STRING_SPLASH_LINE2 "Cley Kossel printer"         // will be shown during bootup in line 2. DaHai - Change if you wish - informational only
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -516,7 +516,7 @@
   #define DELTA_FEEDRATE_SCALING
 
   // After homing move down to a height where XY movement is unconstrained
-  // #define DELTA_HOME_TO_SAFE_ZONE
+  #define DELTA_HOME_TO_SAFE_ZONE
 
   // Delta calibration menu
   // uncomment to add three points calibration menu option.
@@ -865,7 +865,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0     // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0   // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -14.55 // Z offset: -below +above  [the nozzle] - DaHai: For Type 2 Probe!!!
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -15.15 // Z offset: -below +above  [the nozzle] - DaHai: For Type 2 Probe!!!
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10 // DaHai: Keeps the Probe Body from crashing into the bed clamps
@@ -942,7 +942,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
