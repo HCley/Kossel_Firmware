@@ -27,7 +27,7 @@
 //#define ANYCUBIC_KOSSEL_PLUS
 
 // Anycubic Probe version 1 or 2 see README.md; 0 for no probe
-#define ANYCUBIC_PROBE_VERSION 0
+#define ANYCUBIC_PROBE_VERSION 1
 
 // Heated Bed:
 // 0 ... no heated bed
@@ -138,7 +138,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -151,7 +151,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Delta"
+#define CUSTOM_MACHINE_NAME "Deltinha"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -371,11 +371,11 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
-#define HEATER_3_MAXTEMP 275
-#define HEATER_4_MAXTEMP 275
+#define HEATER_0_MAXTEMP 260
+#define HEATER_1_MAXTEMP 260
+#define HEATER_2_MAXTEMP 260
+#define HEATER_3_MAXTEMP 260
+#define HEATER_4_MAXTEMP 260
 #define BED_MAXTEMP      120
 
 //===========================================================================
@@ -572,7 +572,7 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // set the default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 4
+    #define DELTA_CALIBRATION_DEFAULT_POINTS 3
   #endif
 
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
@@ -585,9 +585,9 @@
     // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
     #define DELTA_PRINTABLE_RADIUS 90.0 // mm
     // Center-to-center distance of the holes in the diagonal push rods.
-    #define DELTA_DIAGONAL_ROD 218.0 // mm (DEFAULT: 218.0)
+    #define DELTA_DIAGONAL_ROD 217.0 // mm (DEFAULT: 218.0)
     // Horizontal distance bridged by diagonal push rods when effector is centered.
-    // #define DELTA_RADIUS 97.0 //mm  Get this value from auto calibrate
+    // #define DELTA_RADIUS 98.5 //mm  Get this value from auto calibrate
 
   #define DELTA_SMOOTH_ROD_OFFSET 153.5 // mm (DEFAULT: 153.5)
   #define DELTA_CARRIAGE_OFFSET 24.0 // mm (DEFAULT: 22.6)
@@ -595,7 +595,7 @@
   #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 311.2 // (DEFAULT: 320.0) get this value from auto calibrate
+  #define DELTA_HEIGHT 320.0 // (DEFAULT: 320.0) get this value from auto calibrate
   
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
@@ -644,7 +644,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false  // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false  // set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING (ANYCUBIC_PROBE_VERSION + 0 == 1) // V1 is NO, V2 is NC
+#define Z_MIN_ENDSTOP_INVERTING false   // CUSTOM PROBE
 #define X_MAX_ENDSTOP_INVERTING false  // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false  // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false  // set to true to invert the logic of the endstop.
@@ -664,13 +664,13 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
-//#define X_DRIVER_TYPE  A4988
-//#define Y_DRIVER_TYPE  A4988
-//#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  A4988
+#define Y_DRIVER_TYPE  A4988
+#define Z_DRIVER_TYPE  A4988
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
-//#define E0_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE A4988
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
